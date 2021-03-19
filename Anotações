@@ -1,1 +1,22 @@
-awdawd
+----------- Orientação a Objetos -------------
+
+- Princípios:
+
+1) Coesão
+
+Exemplo: 
+Uma classe coesa é uma classe que executa bem a sua única tarefa, de forma concisa.
+Cada classe deve ser responsável por apenas uma coisa, e deve executar esta tarefa muito bem
+
+2) Encapsulamento
+
+Encapsulamento é uma forma de manter os objetos das nossas classes protegidos, fornecendo apenas o que é estritamente necessário para o mundo exterior.
+O fato de criar getters e setters para tudo, na verdade, quebra o encapsulamento da nossa classe.
+
+Ao encapsular o acesso a determinados dados, liberando acesso apenas ao necessário, os objetos da nossa classe se tornam mais fáceis de serem utilizados.
+
+No caso de atributos que possuem regras de negócio e validação o ideal é remover o métodos set, para evitar uma quebra de encapsulamento.
+Se for algo simples, prefiro deixar na própria classe os métodos de manipulação de tais atributos, para manter a coesão do objeto.
+Mas nos casos de validações mais complexas, que às vezes até precisaremos realizar consultas no banco de dados, o ideal seria separar em alguma classe de serviço.
+
+3) Acoplamento
