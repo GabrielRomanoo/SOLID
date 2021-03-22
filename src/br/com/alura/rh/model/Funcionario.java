@@ -1,11 +1,12 @@
 package br.com.alura.rh.model;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.LocalDate;
 
-import br.com.alura.rh.ValidacaoException;
-
+/* A classe Funcionario deve respeitar os seguintes principios:
+ * 
+ * 1- Deve ser apenas uma representacao de um Funcionario, ou seja, nao deve cuidar de regras/logicas de negocio (coesao)
+ * */
 public class Funcionario {
 
 	private String nome;
@@ -21,12 +22,9 @@ public class Funcionario {
 		this.salario = salario;
 	}
 
-	public void reajustarSalario(BigDecimal aumento) {
-		BigDecimal percentualReajuste = aumento.divide(salario, RoundingMode.HALF_UP);
-		if (percentualReajuste.compareTo(new BigDecimal("0.4")) > 0) {
-			throw new ValidacaoException("Reajuste nao pode ser superior a 40% do salario!");
-		}
-		this.salario = this.salario.add(aumento);
+	public void atualizarSalario(BigDecimal novoSalario) {
+		// A classe Funcionario nao sabe como eh feita a logica, a regra de reajuste do salario. Quem sabe isso, eh a classe ReajusteService, que chama este metodo atualizarSalario
+		this.salario = novoSalario;
 		this.dataUltimoReajuste = LocalDate.now();
 	}
 
