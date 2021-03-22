@@ -8,6 +8,7 @@ Exemplo:
 Uma classe coesa é uma classe que executa bem a sua única tarefa, de forma concisa.
 Cada classe deve ser responsável por apenas uma coisa, e deve executar esta tarefa muito bem
 
+
 2) Encapsulamento
 
 Encapsulamento é uma forma de manter os objetos das nossas classes protegidos, fornecendo apenas o que é estritamente necessário para o mundo exterior.
@@ -19,4 +20,13 @@ No caso de atributos que possuem regras de negócio e validação o ideal é rem
 Se for algo simples, prefiro deixar na própria classe os métodos de manipulação de tais atributos, para manter a coesão do objeto.
 Mas nos casos de validações mais complexas, que às vezes até precisaremos realizar consultas no banco de dados, o ideal seria separar em alguma classe de serviço.
 
+
 3) Acoplamento
+
+ classes dependam de outras para executar determinadas tarefas.
+ 
+ É fato que, se estamos organizando o nosso código, seguindo as recomendações 
+ da orientação a objetos, algum acoplamento acontecerá. 
+ Algumas classes precisarão de outras, para que não tenham muitas responsabilidades. 
+ Cabe a nós medir quando faz sentido adicionar tal acoplamento com as dependências 
+ e como depender do que é seguro, ao invés de classes concretas.
