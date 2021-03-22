@@ -34,7 +34,9 @@ Mas nos casos de validações mais complexas, que às vezes até precisaremos re
  -------------------------------- SOLID --------------------------------------------------
  
  S - Single Responsibility Principle
+ 	 Uma classe (ou módulo, função, etc) deve ter um e apenas um motivo para mudar.
  
- Uma classe (ou módulo, função, etc) deve ter um e apenas um motivo para mudar.
- 
+ O - Open Closed Principle
+ 	 Entidades de software (classes, modulos, funcoes, etc) devem estar abertas para extensao, porem fechadas para modificacao.
+ 	 Garantir que cada ação/responsabilidade esteja na classe correta. Esta é uma das formas de garantir que o sistema seja extensível.
  
