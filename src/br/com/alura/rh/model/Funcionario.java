@@ -5,8 +5,8 @@ import java.time.LocalDate;
 
 /* A classe Funcionario deve respeitar os seguintes principios:
  * 
- * 1- Deve ser apenas uma representacao de um Funcionario, ou seja, nao deve cuidar de regras/logicas de negocio (coesao)
- * */
+ * 1) S - Deve ser apenas uma representacao de um Funcionario, ou seja, nao deve cuidar de regras/logicas de negocio (coesao). Dessa forma, so deveriamos mudar a classe funcionario, se a representacao de funcionario mudasse (Single Responsibility Principle)
+ */
 public class Funcionario {
 
 	private String nome;
@@ -26,6 +26,16 @@ public class Funcionario {
 		// A classe Funcionario nao sabe como eh feita a logica, a regra de reajuste do salario. Quem sabe isso, eh a classe ReajusteService, que chama este metodo atualizarSalario
 		this.salario = novoSalario;
 		this.dataUltimoReajuste = LocalDate.now();
+		
+		/* esta classe virou um setSalario disfarcado
+		 * Talvez uma alternativa seria alterar a visibilidade do método atualizarSalario da classe Funcionario para package-private:
+		 * 	void atualizarSalario(BigDecimal novoSalario) {
+    			codigo...
+    		}
+    	 * E alterar a estrutura de pacotes da aplicação, movendo a classe ReajusteService para o mesmo pacote da classe Funcionario, para que ela consiga enxergar o método atualizarSalario.
+    	 * Assim dá para garantir que apenas as classe dentro desse pacote enxerguem o método atualizarSalario, impedindo que de fora ele seja chamado
+		 * 
+		 */
 	}
 
 	public String getNome() {

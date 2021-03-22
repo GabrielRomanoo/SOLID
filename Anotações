@@ -30,3 +30,11 @@ Mas nos casos de validações mais complexas, que às vezes até precisaremos re
  Algumas classes precisarão de outras, para que não tenham muitas responsabilidades. 
  Cabe a nós medir quando faz sentido adicionar tal acoplamento com as dependências 
  e como depender do que é seguro, ao invés de classes concretas.
+ 
+ -------------------------------- SOLID --------------------------------------------------
+ 
+ S - Single Responsibility Principle
+ 
+ Uma classe (ou módulo, função, etc) deve ter um e apenas um motivo para mudar.
+ 
+ 
