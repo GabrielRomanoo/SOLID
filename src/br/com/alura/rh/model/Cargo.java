@@ -2,7 +2,8 @@ package br.com.alura.rh.model;
 
 public enum Cargo {
 	/* 
-	 * Um Enum não precisa necessariamente ter apenas constantes, ele pode ter metodos tambem
+	 * Um Enum não precisa necessariamente ter apenas constantes, 
+	 * ele pode ter metodos tambem
 	 */
 
 	ASSISTENTE { //constante
@@ -30,6 +31,6 @@ public enum Cargo {
 		}
 	};
 
-	public abstract Cargo getProximoCargo(); //por ser um metodo abstrato, as constantes precisam implementar este metodo
+	public abstract Cargo getProximoCargo(); //por ser um metodo abstrato, as constantes precisam implementar este metodo obrigatoriamente
 
 }

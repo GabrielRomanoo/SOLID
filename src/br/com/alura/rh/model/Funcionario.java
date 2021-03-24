@@ -9,65 +9,35 @@ import java.time.LocalDate;
  */
 public class Funcionario {
 
-	private String nome;
-	private String cpf;
-	private Cargo cargo;
-	private BigDecimal salario;
+	private DadosPessoais dados; // composicao
 	private LocalDate dataUltimoReajuste;
 
 	public Funcionario(String nome, String cpf, Cargo cargo, BigDecimal salario) {
-		this.nome = nome;
-		this.cpf = cpf;
-		this.cargo = cargo;
-		this.salario = salario;
+		this.dados = new DadosPessoais(nome, cpf, cargo, salario);
 	}
 
 	public void atualizarSalario(BigDecimal novoSalario) {
-		// A classe Funcionario nao sabe como eh feita a logica, a regra de reajuste do salario. Quem sabe isso, eh a classe ReajusteService, que chama este metodo atualizarSalario
-		this.salario = novoSalario;
+		// A classe Funcionario nao sabe como eh feita a logica, a regra de reajuste do
+		// salario. Quem sabe isso, eh a classe ReajusteService, que chama este metodo
+		// atualizarSalario
+		this.dados.setSalario(novoSalario);
 		this.dataUltimoReajuste = LocalDate.now();
-		
-		/* esta classe virou um setSalario disfarcado
-		 * Talvez uma alternativa seria alterar a visibilidade do método atualizarSalario da classe Funcionario para package-private:
-		 * 	void atualizarSalario(BigDecimal novoSalario) {
-    			codigo...
-    		}
-    	 * E alterar a estrutura de pacotes da aplicação, movendo a classe ReajusteService para o mesmo pacote da classe Funcionario, para que ela consiga enxergar o método atualizarSalario.
-    	 * Assim dá para garantir que apenas as classe dentro desse pacote enxerguem o método atualizarSalario, impedindo que de fora ele seja chamado
+
+		/*
+		 * esta classe virou um setSalario disfarcado Talvez uma alternativa seria
+		 * alterar a visibilidade do método atualizarSalario da classe Funcionario para
+		 * package-private: void atualizarSalario(BigDecimal novoSalario) { codigo... }
+		 * E alterar a estrutura de pacotes da aplicação, movendo a classe
+		 * ReajusteService para o mesmo pacote da classe Funcionario, para que ela
+		 * consiga enxergar o método atualizarSalario. Assim dá para garantir que apenas
+		 * as classe dentro desse pacote enxerguem o método atualizarSalario, impedindo
+		 * que de fora ele seja chamado
 		 * 
 		 */
 	}
 
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public Cargo getCargo() {
-		return cargo;
-	}
-
-	public void setCargo(Cargo cargo) {
-		this.cargo = cargo;
-	}
-
-	public BigDecimal getSalario() {
-		return salario;
-	}
-
-	public void setSalario(BigDecimal salario) {
-		this.salario = salario;
+	public DadosPessoais getDados() {
+		return dados;
 	}
 
 	public LocalDate getDataUltimoReajuste() {
@@ -79,7 +49,7 @@ public class Funcionario {
 	}
 
 	public void promover(Cargo novoCargo) {
-		this.cargo = novoCargo;
+		this.dados.setCargo(novoCargo);
 	}
 
 }

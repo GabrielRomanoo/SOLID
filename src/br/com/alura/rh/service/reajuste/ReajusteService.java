@@ -19,7 +19,7 @@ public class ReajusteService {
 		//VALIDACAO (nao sabemos quais sao, recebemos ela do contrutor) - principio 'O' do SOLID
 		this.validacoes.forEach(validacao -> validacao.validar(funcionario, aumento));
 		
-		BigDecimal salarioReajustado = funcionario.getSalario().add(aumento);
+		BigDecimal salarioReajustado = funcionario.getDados().getSalario().add(aumento);
 		funcionario.atualizarSalario(salarioReajustado);
 	}
 }
