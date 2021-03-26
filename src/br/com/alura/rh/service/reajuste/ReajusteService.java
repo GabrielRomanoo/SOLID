@@ -7,7 +7,7 @@ import br.com.alura.rh.model.Funcionario;
 
 public class ReajusteService {
 	
-	private List<ValidacaoReajuste> validacoes;
+	private List<ValidacaoReajuste> validacoes; //Usamos uma interface como referencia para que possamos apontar para qualquer objeto que implemente essa interface
 	
 	// A classe ReajusteService nao precisa saber quais sao as validacoes, o que cada um faz, nos recebemos elas no contrutor
 	public ReajusteService(List<ValidacaoReajuste> validacoes) {
