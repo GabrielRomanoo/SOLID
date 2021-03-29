@@ -7,5 +7,4 @@ public interface Reajuste { //para usar o polimorfismo e ter varios tipos de rea
 
 	BigDecimal valor();
 	LocalDate data();
-	
 }
