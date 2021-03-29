@@ -1,5 +1,11 @@
 package br.com.alura.rh.service.tributacao;
 
-public interface Reajuste {
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
+public interface Reajuste { //para usar o polimorfismo e ter varios tipos de reajuste
+
+	BigDecimal valor();
+	LocalDate data();
+	
 }
