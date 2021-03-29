@@ -18,6 +18,7 @@ public class ReajusteService {
 	public void reajustarSalarioDoFuncionario(Funcionario funcionario, BigDecimal aumento) {
 		//VALIDACAO (nao sabemos quais sao, recebemos ela do contrutor) - principio 'O' do SOLID
 		this.validacoes.forEach(validacao -> validacao.validar(funcionario, aumento));
+		// a classe reajuste service apenas chama cada uma das validacoes, entao ela nao conhece cada uma das validacao. entao se srugir uma nova validacao, apenas devemos criar a classe dela e adicionar a lista na hora de chamar a classe ReajusteService
 		
 		BigDecimal salarioReajustado = funcionario.getDados().getSalario().add(aumento);
 		funcionario.atualizarSalario(salarioReajustado);
