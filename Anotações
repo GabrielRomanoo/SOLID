@@ -44,7 +44,11 @@ Mas nos casos de validações mais complexas, que às vezes até precisaremos re
  	 Utilizar sempre a herança, pode trazer efeitos colaterais (exemplo da clsse funcinario, se a classe Terceirizado herdasse ela, ela iria trazer metodos que nao fazem sentido, como por exemplo o de promocao)
  	 Uma alternativa para evitar a herança indesejada, é utiliza a composição (como foi usado na classe DadosPessoais, que esta tanto em Funcionario como tambem em Terceirizado) 
  	 
- I - Dependency Inversion Principle
+ I - Interface Segregation Principle
+ 	 Classes não devem ser obrigadas a implementar métodos que não irão precisar.
+ 	 Uma classe não deve ser obrigada a implementar um método de determinada interface, se ele não será útil. Para isso, uma interface deverá ser extraída apenas com os métodos necessários.
+ 
+ D - Dependency Inversion Principle
  	 Caso uma determinada implementação mude, não seremos afetados, pois dependemos apenas de sua interface.
  	 Se um método muda a forma como realiza sua tarefa, desde que a interface se mantenha, não vamos precisar nos preocupar nem em editar o nosso código.
  	 A implementação depende da abstracao, e nao a abstracao depende da implementacao
