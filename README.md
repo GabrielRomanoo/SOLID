@@ -6,3 +6,4 @@ Este repositório possui um projeto com a aplicação do SOLID
 - Acoplamento de código
 - Encapsulamento de código
 - Princípios de código sólido
+- Arquivo com anotações
